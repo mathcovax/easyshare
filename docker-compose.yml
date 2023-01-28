@@ -1,9 +1,35 @@
 version: '3'
 services:
+  proxy:
+    container_name: proxy
+    build:
+      context: .docker/proxy
+    ports:
+      - 8080:80
+    volumes:
+      - ./proxy:/proxy
+    depends_on:
+      - mongo
+
   vue:
+    container_name: vue
     build:
       context: .docker/vue
-    ports:
-      - 1506:8080
     volumes:
       - ./vue:/vue
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: mongo
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - mongo_data:/opt/mongodb/db
+
+volumes:
+  mongo_data: {}

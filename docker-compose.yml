@@ -20,6 +20,15 @@ services:
     depends_on:
       - mongo
 
+  fastify:
+    container_name: fastify
+    build:
+      context: .docker/fastify
+    volumes:
+      - ./fastify:/fastify
+    depends_on:
+      - mongo
+
   mongo:
     container_name: mongo
     image: mongo

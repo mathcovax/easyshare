@@ -5,8 +5,8 @@ import rateLimit from "@fastify/rate-limit";
 const server = fastify();
 
 server.register(rateLimit, {
-    max: 5000,
-    timeWindow: 1000*60
+	max: 5000,
+	timeWindow: 1000*60
 });
 
 server.register(proxy, {

@@ -1,0 +1,22 @@
+{
+
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": true,
+
+	"files.autoSave": "off",
+
+	"[yaml]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+	},
+
+	"eslint.validate": ["javascript", "vue"],
+	"eslint.workingDirectories": [
+		"./vue"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"vetur.validation.template": false
+}

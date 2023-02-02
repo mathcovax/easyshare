@@ -13,7 +13,9 @@
 
 	"eslint.validate": ["javascript", "vue"],
 	"eslint.workingDirectories": [
-		"./vue"
+		"./vue",
+		"./fastify",
+		"./proxy"
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true

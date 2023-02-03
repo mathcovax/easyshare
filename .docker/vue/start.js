@@ -18,7 +18,9 @@ class child{
 
 	static stop(){
 		this.watcher.close();
-		process.kill(this.process.pid, "SIGINT");
+		try{
+			process.kill(this.process.pid, "SIGINT");
+		}catch{}
 	}
 
 	static restart(){
